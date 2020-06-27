@@ -149,7 +149,7 @@ Rất ngắn gọn,  vì chúng ta sử dụng ```setCount``` như đã đề c�
   </button>
 ```
 
-<h2>3. Thắc mắc về dấu ngoặc vuông?</h2>
+<h2>4. Thắc mắc về dấu ngoặc vuông?</h2>
 
 ```javascript
 // Ờ tại sao không phải là

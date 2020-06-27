@@ -70,13 +70,13 @@ Và nó sẽ được áp dụng trong hook, <b>hooks không sử dụng class</
 
 ```Hook``` là một hàm javascript đặc biệt để bạn có thể <em>móc vào</em> các chức năng của react. Nghe khá trừu tượng nhưng hãy xem một ví dụ với ```useState```, ```useState``` là một hook giúp bạn thêm react state vào một ```function component```. Tức là một ```stateless component``` được <em>móc</em> state.
 
-<h3>2. Khi nào nên sử dụng Hooks?</h3>
+<h2>2. Khi nào nên sử dụng Hooks?</h2>
 
 Có thể nói là bất cứ khi nào ta muốn, nhưng phải tuân thủ 2 luật đã được đề cập tại [document của react-hook](https://reactjs.org/docs/hooks-rules.html) như sau:
 
 <h4>RULE 1: Only Call Hooks at the Top Level</h4>
 
-Đừng call hooks trong các vòng lặp, các câu điều kiện hay là hàm lồng. Thay vào đó hãy call hooks ở trên cùng trong các hàm của bạn. Tại sao ư? Hãy đọc xong 2 bài ```useState``` và ```useEffect``` rồi sẽ thấy giải thích kĩ càng hơn ở [đây]() nhé!
+Đừng call hooks trong các vòng lặp, các câu điều kiện hay là hàm lồng. Thay vào đó hãy call hooks ở trên cùng trong các hàm của bạn. Tại sao ư? Hãy đọc xong 2 bài ```useState``` và ```useEffect``` rồi sẽ thấy giải thích kĩ càng hơn ở [đây](./03-rules-of-hooks.md) nhé!
 
 <h4>RULE 2: Only Call Hooks from React Functions</h4>
 Đừng call hooks ở các hàm JS thông thường, mà hãy call ở 2 nơi sau:
