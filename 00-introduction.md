@@ -76,7 +76,7 @@ Có thể nói là bất cứ khi nào ta muốn, nhưng phải tuân thủ 2 lu
 
 <h4>RULE 1: Only Call Hooks at the Top Level</h4>
 
-Đừng call hooks trong các vòng lặp, các câu điều kiện hay là hàm lồng. Thay vào đó hãy call hooks ở trên cùng trong các hàm của bạn. Tại sao ư? Hãy đọc xong 2 bài ```useState``` và ```useEffect``` rồi sẽ thấy giải thích kĩ càng hơn ở [đây]() nhé!
+Đừng call hooks trong các vòng lặp, các câu điều kiện hay là hàm lồng. Thay vào đó hãy call hooks ở trên cùng trong các hàm của bạn. Tại sao ư? Hãy đọc xong 2 bài ```useState``` và ```useEffect``` rồi sẽ thấy giải thích kĩ càng hơn ở [đây](./03-rules-of-hooks.md) nhé!
 
 <h4>RULE 2: Only Call Hooks from React Functions</h4>
 Đừng call hooks ở các hàm JS thông thường, mà hãy call ở 2 nơi sau:
