@@ -68,7 +68,7 @@ Và nó sẽ được áp dụng trong hook, <b>hooks không sử dụng class</
 
 <h2>1. Hooks là gì?</h2>
 
-Hook là một hàm đặc biệt để bạn có thể <em>móc vào</em> các chức năng của react. Nghe khá trừu tượng nhưng ví dụ là ```useState``` là một hook giúp bạn thêm react state vào một ```function component```. Tức là một ```stateless component``` được <em>móc</em> state.
+```Hook``` là một hàm javascript đặc biệt để bạn có thể <em>móc vào</em> các chức năng của react. Nghe khá trừu tượng nhưng hãy xem một ví dụ với ```useState```, ```useState``` là một hook giúp bạn thêm react state vào một ```function component```. Tức là một ```stateless component``` được <em>móc</em> state.
 
 <h3>2. Khi nào nên sử dụng Hooks?</h3>
 
@@ -97,5 +97,4 @@ React cung cấp một số hooks cơ bản như sau:
 - ```useMemo```
 - ...
 
-Các hooks API được liệt kê tại [document của react-hooks
-](https://reactjs.org/docs/hooks-reference.html)
+Các hooks API được liệt kê tại [document của react-hooks](https://reactjs.org/docs/hooks-reference.html)
