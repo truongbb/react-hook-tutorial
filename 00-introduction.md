@@ -70,7 +70,7 @@ Và nó sẽ được áp dụng trong hook, <b>hooks không sử dụng class</
 
 ```Hook``` là một hàm javascript đặc biệt để bạn có thể <em>móc vào</em> các chức năng của react. Nghe khá trừu tượng nhưng hãy xem một ví dụ với ```useState```, ```useState``` là một hook giúp bạn thêm react state vào một ```function component```. Tức là một ```stateless component``` được <em>móc</em> state.
 
-<h3>2. Khi nào nên sử dụng Hooks?</h3>
+<h2>2. Khi nào nên sử dụng Hooks?</h2>
 
 Có thể nói là bất cứ khi nào ta muốn, nhưng phải tuân thủ 2 luật đã được đề cập tại [document của react-hook](https://reactjs.org/docs/hooks-rules.html) như sau:
 
