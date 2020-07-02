@@ -1,12 +1,12 @@
 import React from 'react'
 import { Row, Col, Badge } from 'reactstrap'
 
-const TodoFooter = () => {
+const TodoFooter = props => {
   return (
     <React.Fragment>
       <Row className='w-60 mt-5 d-flex align-items-baseline'>
         <Col md={3}>
-          <span className='cursor-pointer hover-red'>Choose all 3 items</span>
+          <span>{props.totalItem} items left</span>
         </Col>
         <Col md={6} className='d-flex justify-content-around'>
           <span className='filter-option cursor-pointer'>
