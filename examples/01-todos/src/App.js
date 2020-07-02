@@ -16,19 +16,31 @@ function App() {
   const addTodo = newTodo => setTodos([...todos, { id: todos.length, content: newTodo, isDone: false }])
 
   const removeTodo = todoId => {
-    const filterTodos = todos.filter(task => task.id !== todoId)
-    console.log(filterTodos)
-    setTodos(filterTodos)
+    const filteredTodos = todos.filter(task => task.id !== todoId)
+    setTodos(filteredTodos)
   }
 
-  const completeTask = todoId => {
-    todos.forEach(task => {
+  const changeTaskStatus = todoId => {
+    const mapTodos = todos.map(task => {
       if (task.id === todoId) {
         task.isDone = !task.isDone
-        return
       }
+      return task
     })
-    setTodos(todos)
+    setTodos(mapTodos)
+  }
+
+  const changeStatusAllTasks = isChecked => {
+    const mapTodos = todos.map(task => {
+      task.isDone = isChecked
+      return task
+    })
+    setTodos(mapTodos)
+  }
+
+  const clearComplete = () => {
+    const filteredTodos = todos.filter(task => !task.isDone)
+    setTodos(filteredTodos)
   }
 
   return (
@@ -39,11 +51,15 @@ function App() {
         </Col>
       </Row>
 
-      <TodoForm addTodo={addTodo} />
+      <TodoForm
+        addTodo={addTodo}
+        changeStatusAllTasks={changeStatusAllTasks}
+      />
       <TodoList
         todos={todos}
         removeTodo={removeTodo}
-        completeTask={completeTask}
+        changeTaskStatus={changeTaskStatus}
+        clearComplete={clearComplete}
       />
     </Container>
   )

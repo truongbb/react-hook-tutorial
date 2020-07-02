@@ -2,6 +2,9 @@ import React from 'react'
 import { Row, Col, Badge } from 'reactstrap'
 
 const TodoFooter = props => {
+
+  const clearComplete = () => props.clearComplete()
+
   return (
     <React.Fragment>
       <Row className='w-60 mt-5 d-flex align-items-baseline'>
@@ -20,12 +23,12 @@ const TodoFooter = props => {
           </span>
         </Col>
         <Col md={3}>
-          <span className='cursor-pointer hover-red'>Clear complete</span>
+          <span className='cursor-pointer hover-red' onClick={clearComplete}>Clear complete</span>
         </Col>
-
       </Row>
     </React.Fragment>
   )
+
 }
 
 export default TodoFooter

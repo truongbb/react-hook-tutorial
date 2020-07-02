@@ -19,6 +19,8 @@ const TodoForm = props => {
     }
   }
 
+  const changeStatusAllTasks = isChecked => props.changeStatusAllTasks(isChecked)
+
   return (
     <React.Fragment>
       <Row className='w-60 mb-5 pb-5 ml-3'>
@@ -26,7 +28,7 @@ const TodoForm = props => {
           <Form>
             <Row>
               <Col md={1} style={{ marginRight: '-20px', paddingRight: '0px' }}>
-                <Input type="checkbox" />
+                <Input type="checkbox" onChange={e => changeStatusAllTasks(e.target.checked)} key={-1} />
               </Col>
               <Col md={10}>
                 <Input type="text" placeholder="What need to be done?" onKeyPress={e => addTodo(e)} />

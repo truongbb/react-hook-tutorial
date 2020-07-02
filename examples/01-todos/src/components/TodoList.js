@@ -8,7 +8,16 @@ const TodoList = props => {
 
   const removeTodo = todoId => props.removeTodo(todoId)
 
-  const completeTask = todoId => props.completeTask(todoId)
+  const changeTaskStatus = todoId => props.changeTaskStatus(todoId)
+
+  const countTotal = () => {
+    if (!validArray(props.todos)) {
+      return 0
+    }
+    return props.todos.filter(task => !task.isDone).length
+  }
+
+  const clearComplete = () => props.clearComplete()
 
   return (
     <React.Fragment>
@@ -19,12 +28,12 @@ const TodoList = props => {
             todo={item}
             key={index}
             removeTodo={removeTodo}
-            completeTask={completeTask}
+            changeTaskStatus={changeTaskStatus}
           />
         )
       }
       {
-        validArray(props.todos) && <TodoFooter totalItem={props.todos.filter(task => !task.isDone).length} />
+        validArray(props.todos) && <TodoFooter totalItem={countTotal()} clearComplete={clearComplete} />
       }
     </React.Fragment>
   )
