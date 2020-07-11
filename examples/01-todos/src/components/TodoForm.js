@@ -1,21 +1,23 @@
 import React from 'react'
 
+// components
 import { Row, Form, Input, Col } from 'reactstrap'
 
+// utils
 import { notNullAndEmptyString } from '../utils/StringUtils'
+import { validArray } from '../utils/ArrayUtils'
 
 const TodoForm = props => {
 
   const addTodo = event => {
     if (event.which === 13 || event.keyCode === 13) {
+      event.preventDefault()
       const newTodo = event.target.value
+      event.target.value = ''
       if (!notNullAndEmptyString(newTodo)) {
-        event.preventDefault()
         return
       }
       props.addTodo(newTodo)
-      event.target.value = ''
-      event.preventDefault()
     }
   }
 
@@ -28,7 +30,7 @@ const TodoForm = props => {
           <Form>
             <Row>
               <Col md={1} style={{ marginRight: '-20px', paddingRight: '0px' }}>
-                <Input type="checkbox" onChange={e => changeStatusAllTasks(e.target.checked)} key={-1} />
+                <Input type="checkbox" onChange={e => changeStatusAllTasks(e.target.checked)} key={-1} className={!validArray(props.todos) && 'd-none'} />
               </Col>
               <Col md={10}>
                 <Input type="text" placeholder="What need to be done?" onKeyPress={e => addTodo(e)} />

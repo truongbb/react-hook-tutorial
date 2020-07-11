@@ -1,7 +1,10 @@
 import React from 'react'
+
+// components
 import TodoItem from './TodoItem'
 import TodoFooter from './TodoFooter'
 
+// utils
 import { validArray } from '../utils/ArrayUtils'
 
 const TodoList = props => {
@@ -33,7 +36,13 @@ const TodoList = props => {
         )
       }
       {
-        validArray(props.todos) && <TodoFooter totalItem={countTotal()} clearComplete={clearComplete} />
+        validArray(props.todos) &&
+        <TodoFooter
+          totalItem={countTotal()}
+          clearComplete={clearComplete}
+          filterType={props.filterType}
+          filterTodos={props.filterTodos}
+        />
       }
     </React.Fragment>
   )

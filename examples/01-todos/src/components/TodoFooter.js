@@ -1,9 +1,16 @@
 import React from 'react'
+
+// components
 import { Row, Col, Badge } from 'reactstrap'
+
+// constants
+import { ALL, ACTIVE, DONE } from '../constants/StatusConstant'
 
 const TodoFooter = props => {
 
   const clearComplete = () => props.clearComplete()
+
+  const filterTodos = type => props.filterTodos(type)
 
   return (
     <React.Fragment>
@@ -12,14 +19,14 @@ const TodoFooter = props => {
           <span>{props.totalItem} items left</span>
         </Col>
         <Col md={6} className='d-flex justify-content-around'>
-          <span className='filter-option cursor-pointer'>
-            <Badge color="primary">All</Badge>
+          <span className='filter-option cursor-pointer' onClick={() => filterTodos(ALL)}>
+            <Badge color={props.filterType === ALL ? 'primary' : 'secondary'}>All</Badge>
           </span>
-          <span className='filter-option cursor-pointer'>
-            <Badge color="secondary">Active</Badge>
+          <span className='filter-option cursor-pointer' onClick={() => filterTodos(ACTIVE)}>
+            <Badge color={props.filterType === ACTIVE ? 'primary' : 'secondary'}>Active</Badge>
           </span>
-          <span className='filter-option cursor-pointer'>
-            <Badge color="secondary">Done</Badge>
+          <span className='filter-option cursor-pointer' onClick={() => filterTodos(DONE)}>
+            <Badge color={props.filterType === DONE ? 'primary' : 'secondary'}>Done</Badge>
           </span>
         </Col>
         <Col md={3}>

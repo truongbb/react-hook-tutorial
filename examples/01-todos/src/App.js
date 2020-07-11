@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 // components
 import { Container, Row, Col } from 'reactstrap'
@@ -9,9 +9,18 @@ import TodoList from './components/TodoList'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
 
+// constants
+import { ALL, ACTIVE, DONE } from './constants/StatusConstant'
+
 function App() {
 
   const [todos, setTodos] = useState([])
+  const [filteredTasks, setFilteredTasks] = useState([])
+  const [filterType, setFilterType] = useState('ALL')
+
+  useEffect(() => {
+    doFilter(filterType)
+  }, [todos, filterType]) // watch state change
 
   const addTodo = newTodo => setTodos([...todos, { id: todos.length, content: newTodo, isDone: false }])
 
@@ -41,6 +50,19 @@ function App() {
   const clearComplete = () => {
     const filteredTodos = todos.filter(task => !task.isDone)
     setTodos(filteredTodos)
+    if (filterType === DONE) {
+      setFilterType(ALL)
+    }
+  }
+
+  const doFilter = type => {
+    setFilterType(type)
+    const filteredTasks = todos.filter(task =>
+      filterType === ALL
+      || (filterType === ACTIVE && !task.isDone)
+      || (filterType === DONE && task.isDone)
+    )
+    setFilteredTasks(filteredTasks)
   }
 
   return (
@@ -53,13 +75,16 @@ function App() {
 
       <TodoForm
         addTodo={addTodo}
+        todos={todos}
         changeStatusAllTasks={changeStatusAllTasks}
       />
       <TodoList
-        todos={todos}
+        todos={filteredTasks}
         removeTodo={removeTodo}
         changeTaskStatus={changeTaskStatus}
         clearComplete={clearComplete}
+        filterType={filterType}
+        filterTodos={doFilter}
       />
     </Container>
   )
