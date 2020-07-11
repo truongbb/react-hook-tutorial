@@ -1,0 +1,47 @@
+html,
+body {
+  font-size: 16px;
+}
+
+.w-60 {
+  width: 60%;
+}
+
+.clear-task {
+  font-weight: bold;
+  font-size: large;
+}
+
+.clear-task,
+.clear-task:active,
+.clear-task:focus {
+  border: none;
+  outline: none;
+  background: none;
+}
+
+.clear-task:hover {
+  color: red;
+}
+
+.item-content,
+.filter-option {
+  font-size: larger;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.hover-red:hover {
+  color: red;
+}
+
+input[type="checkbox"] {
+  min-width: 20px;
+  min-height: 20px;
+}
+
+.text-strick-out {
+  text-decoration: line-through;
+}
