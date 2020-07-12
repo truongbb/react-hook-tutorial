@@ -1,0 +1,52 @@
+.App {
+  text-align: center;
+  margin: 3%;
+}
+
+.title {
+  color: darkolivegreen;
+}
+
+.title h1 {
+  font-size: 4em;
+}
+
+.calculator {
+  margin: 5% 30%;
+  border: 1px solid rgba(128, 128, 128, 0.49);
+  border-radius: 5px;
+}
+
+.screen-value {
+  margin: 2% 5%;
+  border: 1px solid rgba(128, 128, 128, 0.49);
+  text-align: right;
+  font-size: 2em;
+}
+
+.screen-value label {
+  padding-right: 2%;
+}
+
+.keyboard {
+  margin: 0 5%;
+}
+
+.btn {
+  border: 1px solid #c1c1c1 !important;
+  background-color: #e8e8e8 !important;
+}
+
+.row {
+  margin-bottom: 2%;
+}
+
+.ce-button {
+  background-color: #ec6a6a !important;
+  color: #fff !important;
+}
+
+.equal-button {
+  background-color: #2d7fd8 !important;
+  color: #fff !important;
+}
